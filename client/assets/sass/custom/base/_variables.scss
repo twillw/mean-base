@@ -1,0 +1,90 @@
+/* VARIABLES
+--------------------------------------------------------------
+	=Mixins
+	=Directory paths
+  =Media Queries
+*/
+
+/* =Mixins
+-------------------------------------------------------------- */ 
+// Buttons
+@mixin btn($color, $shadow) {
+  @include btn-static;
+
+  background-color: $color;
+  box-shadow: 1px 1px 0px 1px $shadow;
+
+  &:hover {
+    background-color: darken($color, 5%);
+    box-shadow: 1px 1.5px 0px 1px darken($shadow, 5%);
+
+    &:disabled {
+      background-color:$color;
+      box-shadow: 1px 1px 0px 1px $shadow;
+    }
+  }
+}
+
+@mixin btn-static {
+  @include pad(0.95em 1.2em);
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}
+
+//Drop shadows
+@mixin shadow-raised($color) {
+  box-shadow:0px 15px 10px -10px darken($color, 10%);
+  &:before, &:after {
+    content: none;
+  }
+}
+
+@mixin shadow-full($color) {
+  box-shadow: 1px 1px 10px darken($color, 15%);  
+  &:before, &:after {
+    content: none;
+  }
+}
+
+//Profile images
+@mixin profile($width) {
+  width: $width;
+  height: $width;
+  border-radius: $width/2;
+  font-size: 2em;
+}
+
+// placeholder icon mixin
+@mixin icon-placeholder($content) {
+    ::-webkit-input-placeholder::before { 
+    content: '$content ';
+  }
+  ::-moz-placeholder::before { 
+    content: '$content ';
+  } 
+  :-ms-input-placeholder::before { 
+    content: '$content ';
+  } 
+  :-moz-placeholder::before { 
+    content: '$content ';
+  }
+} 
+
+/* =Directory paths
+-------------------------------------------------------------- */ 
+// Icon path
+@icons: "../img/png";
+
+/* =Media queries
+-------------------------------------------------------------- */ 
+
+
+
+

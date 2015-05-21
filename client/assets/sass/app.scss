@@ -1,0 +1,21 @@
+/* **************** APP-WIDE STYLES *****************
+--------------------------------------------------------------
+includes:
+	=bower variables
+	=app.sass import
+*/
+
+// Vendor styles are injected through grunt
+// injector
+@import 'client/assets/sass/custom/base/_variables.scss';
+// endinjector
+
+@import 'custom/main.scss';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+

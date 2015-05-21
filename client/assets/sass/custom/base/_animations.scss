@@ -1,0 +1,172 @@
+/* ANIMATIONS
+--------------------------------------------------------------
+	=Global
+    =Icons
+	=Packages-carousel
+    =Tooltips
+*/
+
+/* =Global
+-------------------------------------------------------------- */ 
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+.fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 0.2s, opacity 0.2s linear;    
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+}
+
+/* =Icons
+-------------------------------------------------------------- */ 
+// wave icon
+$wave-width: 2px;
+$wave-size: 20px;
+
+.wave-icon {
+  position: relative;
+}
+
+.wave-wrapper {
+  position: absolute;
+
+  &:last-child {
+    position: absolute;
+    top: -6px;
+  }
+}
+
+.wave, .wave::before, .wave::after {
+  width: $wave-size;
+  height: $wave-size;
+  border-radius: 50%;
+  border: solid $wave-width transparent;
+}
+
+.wave {
+    border-bottom-color: $brand-white;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 9px;
+    margin-top: -2px;
+    text-align: center;
+    position: relative;
+}
+
+.wave::before, .wave::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.wave::before {
+    border-bottom-color: $brand-white;
+    left: (-$wave-size + $wave-width*2) + 2;
+    top: -$wave-width;
+}
+
+.wave::after {
+    border-bottom-color: $brand-white;
+    left: ($wave-size/4 + $wave-width) + 2;
+    top: -$wave-width;
+}
+
+/* =Packages-carousel
+-------------------------------------------------------------- */ 
+.at-view-slide-out-right.ng-leave {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1;
+    z-index: 3;
+    position: absolute;
+}
+
+.at-view-slide-out-right.ng-leave-active {
+    -webkit-transform: translate(1000%, 0px);
+    -moz-transform: translate(1000%, 0px);
+    -ms-transform: translate(1000%, 0px);
+    -o-transform: translate(1000%, 0px);
+    transform: translate(1000%, 0px);
+    opacity: 0;
+    position: absolute;
+}
+
+.at-view-slide-in-left.ng-enter {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-delay:0.2s;
+    transition-delay:0.2s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform: translate(-100%, 0px);
+    -moz-transform: translate(-100%, 0px);
+    -ms-transform: translate(-100%, 0px);
+    -o-transform: translate(-100%, 0px);
+    transform: translate(-100%, 0px);
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.at-view-slide-in-left.ng-enter-active {
+    -webkit-transition-delay:0.2s;
+    transition-delay:0.2s;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1;
+    position: absolute;
+}
+
+/* =Tooltips
+-------------------------------------------------------------- */ 
+@-webkit-keyframes bounce { 
+    from { }
+    to { -webkit-transform: translateY(-20px); }
+}
+@-moz-keyframes bounce { 
+    from { }
+    to { -moz-transform: translateY(-20px); }
+}
+@-ms-keyframes bounce { 
+    from { }
+    to { -ms-transform: translateY(-20px); }
+}
+@-o-keyframes bounce { 
+    from { }
+    to { -o-transform: translateY(-20px); }
+}
+@keyframes bounce { 
+    from { }
+    to { transform: translateY(-20px); }
+}
+
+.tooltip-item.booking-tooltip {
+    -webkit-animation: bounce .6s ease infinite alternate;
+    -moz-animation: bounce .6s ease infinite alternate;
+    -ms-animation: bounce .6s ease infinite alternate;
+    -o-animation: bounce .6s ease infinite alternate;
+    animation: bounce .6s ease infinite alternate;
+}

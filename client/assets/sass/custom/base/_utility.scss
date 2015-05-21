@@ -1,0 +1,55 @@
+/* UTILITY
+--------------------------------------------------------------
+	=Positioning 
+	=Brand colours
+	=Grayscale
+*/
+
+
+
+
+/* =Positioning
+-------------------------------------------------------------- */ 
+.clearfix {
+  clear: both;
+}
+
+.float-right {
+	float: right;
+}
+
+.hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* =Brand colours
+-------------------------------------------------------------- */ 
+$light-border:#bdc3c7; 
+$highlight:#477dca;
+$hover-row-bg:#d9dcde;
+$light-font: #949da4;
+
+$background-blue:#36acd7;
+$brand-blue:#3fb7cd;  
+$brand-blue-light:#4cc0ea; 
+$brand-blue-dark:#07a2bf;
+$brand-blue-marker:#238db3; 
+$brand-red:#ff8376;
+$brand-red-dark:#fd6d5e;
+
+// extra alert colors
+$success-green:#39b656;
+$warning-red:#cf3636;
+$warning-red-dark:darken($warning-red, 10%);
+
+/* =Grayscale
+-------------------------------------------------------------- */ 
+$brand-black:#333333;
+$brand-black-dark-10:darken($brand-black, 10%); 
+$brand-gray:#e8e8e8;
+$brand-gray-light-5:#f4f4f4;
+$brand-gray-light-10:lighten($brand-gray, 10%);
+$brand-gray-dark-20:darken($brand-gray, 20%);
+$brand-gray-dark-60:darken($brand-gray, 60%);
+$brand-white:#ffffff;
