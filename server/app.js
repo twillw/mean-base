@@ -16,7 +16,6 @@ var express = require('express'),
 
 // Include Controllers
 var authCtrl = require('./controllers/AuthCtrl'),
-    baseCtrl = require('./controllers/BaseCtrl'),
     userCtrl = require('./controllers/UserCtrl');
 
 var app = express();
@@ -64,7 +63,6 @@ dbclient.initialize(config.mongo.uri, function(err) {
   apiRouter.use(authCtrl.authenticate);
 
   // Register controller routes on router
-  baseCtrl.register(apiRouter);
 
 
   // Routes NOT requiring authentication

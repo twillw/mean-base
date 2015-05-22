@@ -30,7 +30,6 @@ define(
           })
           .success(function(data) {
             $cookies.token = data.token;
-            console.log(data.token);
             currentUser = userService.resource.get({id: data.id, token:data.token}).$promise
               .then(function(user) {
                 appModel.user = user;
